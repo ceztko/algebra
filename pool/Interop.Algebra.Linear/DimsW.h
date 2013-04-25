@@ -10,7 +10,7 @@ using namespace NET::Persistence;
 
 namespace Interop { namespace Algebra { namespace Linear
 {
-    public value struct Dims : IPersistableItem
+    public value struct Dims : IPersistable
     {
     public:
         int Rows;

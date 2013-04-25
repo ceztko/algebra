@@ -1,11 +1,14 @@
 #pragma once
 
+#include <IPersistable.h>
+
 #include "defines.h"
 #include "Commons.h"
 
 namespace Algebra { namespace Linear
 {
-    class LINEARALGEBRA_API Vector3D
+    class LINEARALGEBRA_API  alignas(16) Vector3D
+		: Persistence::IPersistable<Vector3D>
     {
     public:
         union
@@ -24,6 +27,10 @@ namespace Algebra { namespace Linear
         TFLOAT operator [](Axis3D axis) const;
         TFLOAT operator [](int index) const;
         operator const MatrixF();
+
+		void Serialize(Persistence::SerializerStream &writer);
+        void Deserialize(Persistence::DeserializerStream &reader);
+        void Revise(Persistence::ReviseMode mode);
     };
 
     LINEARALGEBRA_API bool operator ==(const Vector3D &u, const Vector3D &v);

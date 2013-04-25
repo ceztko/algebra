@@ -4,14 +4,12 @@
 
 #include "Vector3D.h"
 
-using namespace Algebra::Linear;
 using namespace std;
+using namespace Persistence;
+using namespace Algebra::Linear;
 
 Vector3D::Vector3D()
 {
-    X = 0;
-    Y = 0;
-    Z = 0;
 }
 
 Vector3D::Vector3D(TFLOAT x, TFLOAT y, TFLOAT z)
@@ -135,4 +133,22 @@ Vector3D Algebra::Linear::operator ^(const Vector3D &u, const Vector3D &v)
         uY * vZ - uZ * vY,
         uZ * vX - uX * vZ,
         uX * vY - uY * vX);
+}
+
+void Vector3D::Serialize(SerializerStream &writer)
+{
+	writer.WriteElement(_c[0]);
+	writer.WriteElement(_c[1]);
+	writer.WriteElement(_c[2]);
+}
+
+void Vector3D::Deserialize(DeserializerStream &reader)
+{
+	reader.ReadElementAs(&_c[0]);
+	reader.ReadElementAs(&_c[1]);
+	reader.ReadElementAs(&_c[2]);
+}
+
+void Vector3D::Revise(ReviseMode mode)
+{
 }

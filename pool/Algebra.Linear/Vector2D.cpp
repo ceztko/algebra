@@ -4,14 +4,12 @@
 
 #include "Vector2D.h"
 
-using namespace Algebra::Linear;
 using namespace std;
+using namespace Persistence;
+using namespace Algebra::Linear;
 
 Vector2D::Vector2D()
-{
-    X = 0;
-    Y = 0;
-}
+{ }
 
 Vector2D::Vector2D(TFLOAT x, TFLOAT y)
 {
@@ -116,4 +114,20 @@ TFLOAT Algebra::Linear::operator *(const Vector2D &u, const Vector2D &v)
 TFLOAT Algebra::Linear::operator ^(const Vector2D &u, const Vector2D &v)
 {
     return u.X * v.X - u.Y * v.Y;
+}
+
+void Vector2D::Serialize(SerializerStream &writer)
+{
+	writer.WriteElement(_c[0]);
+	writer.WriteElement(_c[1]);
+}
+
+void Vector2D::Deserialize(DeserializerStream &reader)
+{
+	reader.ReadElementAs(&_c[0]);
+	reader.ReadElementAs(&_c[1]);
+}
+
+void Vector2D::Revise(ReviseMode mode)
+{
 }

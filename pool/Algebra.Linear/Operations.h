@@ -19,7 +19,7 @@ namespace Algebra { namespace Linear
 {
     LINEARALGEBRA_API Vector2D Versor(Axis2D axis);
     LINEARALGEBRA_API TFLOAT Angle(const Vector2D &u, Axis2D axis);
-    LINEARALGEBRA_API TFLOAT Angle(const Vector2D &u, const Vector2D v);
+    LINEARALGEBRA_API TFLOAT Angle(const Vector2D &u, const Vector2D &v);
     LINEARALGEBRA_API Vector2D Rotate(const Vector2D &u, TFLOAT alfa);
     LINEARALGEBRA_API Vector2D Rotate(const Vector2D &u, const Vector2D &origin,
         TFLOAT alfa);

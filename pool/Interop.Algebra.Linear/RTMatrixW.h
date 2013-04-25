@@ -13,7 +13,7 @@ using namespace System::Runtime::InteropServices;
 
 namespace Interop { namespace Algebra { namespace Linear
 {
-    public ref class RTMatrix : IPersistableItem
+    public ref class RTMatrix : IPersistable
     {
     private:
         ::RTMatrix *_wrapped;
@@ -94,6 +94,7 @@ namespace Interop { namespace Algebra { namespace Linear
         {
             TFLOAT get() { return (*_wrapped)[2][3];}
         }
+		/*
         void Assign(const ::RTMatrix &matrix)
         {
             *_wrapped = matrix;
@@ -101,7 +102,7 @@ namespace Interop { namespace Algebra { namespace Linear
         void Assign(RTMatrix ^matrix)
         {
             *_wrapped = *matrix->_wrapped;
-        }
+        }*/
         void Assign(array<TFLOAT> ^m)
         {
             TFLOAT _m[12];

@@ -28,7 +28,7 @@ namespace Interop { namespace Algebra { namespace Linear
         }
     };
 
-    public value struct Vector3D : IPersistableItem
+    public value struct Vector3D : IPersistable
     {
     private:
         TFLOAT _X;
@@ -47,10 +47,11 @@ namespace Interop { namespace Algebra { namespace Linear
             _Y = u.Y;
             _Z = u.Z;
         }
-        operator ::Vector3D()
+        /*
+		operator ::Vector3D()
         {
             return ::Vector3D(_X, _Y, _Z);
-        }
+        }*/
         property TFLOAT X
         {
 	        virtual TFLOAT get() { return _X; }

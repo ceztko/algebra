@@ -24,7 +24,7 @@ namespace Interop { namespace Algebra { namespace Linear
         }
     };
 
-    public value struct Vector2D : IVector2D, IPersistableItem
+    public value struct Vector2D : IVector2D, IPersistable
     {
     private:
         TFLOAT _X;
@@ -40,10 +40,11 @@ namespace Interop { namespace Algebra { namespace Linear
             _X = u.X;
             _Y = u.Y;
         }
-        operator ::Vector2D()
-        {
-            return ::Vector2D(_X, _Y);
-        }
+		/*
+		operator ::Vector2D()
+		{
+			return ::Vector2D(_X, _Y);
+		}*/
         property TFLOAT X
         {
 	        virtual TFLOAT get() { return _X; }

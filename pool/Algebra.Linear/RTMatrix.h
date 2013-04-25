@@ -8,7 +8,7 @@
 
 namespace Algebra { namespace Linear
 {
-    class LINEARALGEBRA_API RTMatrix
+    class LINEARALGEBRA_API alignas(16) RTMatrix
     {
     private:
         TFLOAT _M[4][4];

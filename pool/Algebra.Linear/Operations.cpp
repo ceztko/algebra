@@ -59,7 +59,7 @@ namespace Algebra { namespace Linear
         throw exception("Not Implemented");
     }
 
-    TFLOAT Angle(const Vector2D &u, const Vector2D v)
+    TFLOAT Angle(const Vector2D &u, const Vector2D &v)
     {
         throw exception("Not Implemented");
     }
